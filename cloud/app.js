@@ -44,8 +44,8 @@ app.post('/echo', function(req, res) {
 });
 //////
 
-
-define('/signin', login.signin);
+define('/signup', login.signup);
+define('/login', login.login);
 define('/is_login', login.is_login);
 
 

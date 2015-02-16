@@ -23,7 +23,7 @@ function signup(req, res) {
   });
 };
 
-function signin(req, res) {
+function login(req, res) {
   var username = req.v.username;
   var password = req.v.password;
   AV.User.logIn(username, password, {
@@ -65,6 +65,6 @@ function is_login(req, res) {
 };
 
 exports.signup = signup;
-exports.signin = signin;
+exports.login = login;
 exports.queryuser = query_user;
 exports.is_login = is_login;
