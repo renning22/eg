@@ -1,6 +1,8 @@
 require("cloud/app.js");
-// Use AV.Cloud.define to define as many cloud functions as you want.
-// For example:
-AV.Cloud.define("hello", function(request, response) {
-  response.success("Hello world!");
-});
+
+var login = require('cloud/login.js');
+
+AV.Cloud.define("signup", login.signup);
+AV.Cloud.define("signin", login.signin);
+AV.Cloud.define("is_login", login.is_login);
+AV.Cloud.define("query_user", login.query_user);
