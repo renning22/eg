@@ -1,6 +1,5 @@
 // 在 Cloud code 里初始化 Express 框架
 var express = require('express');
-var bodyParser = require('body-parser');
 var app = express();
 var avosExpressCookieSession = require('avos-express-cookie-session');
 
@@ -10,7 +9,6 @@ var login = require('cloud/login.js');
 app.set('views','cloud/views');   // 设置模板目录
 app.set('view engine', 'ejs');    // 设置 template 引擎
 app.use(express.bodyParser());    // 读取请求 body 的中间件
-app.use(bodyParser.json());
 app.use(express.cookieParser('Your Cookie Secure'));  
 //使用 avos-express-cookie-session 记录登录信息到 cookie。
 app.use(avosExpressCookieSession({ cookie: { maxAge: 3600000 }}));
